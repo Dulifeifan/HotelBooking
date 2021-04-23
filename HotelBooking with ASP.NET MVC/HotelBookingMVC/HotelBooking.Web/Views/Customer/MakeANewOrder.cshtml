@@ -1,0 +1,64 @@
+﻿@model HotelBooking.Web.Models.FilterRoomModelForBooking
+
+<div>
+    <h4>Confirm your booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.roomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bedType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bedType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+    </dl>
+</div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Confirm Order" class="btn btn-default" /> |
+        @Html.ActionLink("Back to Search", "Index")
+    </div>
+}

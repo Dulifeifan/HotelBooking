@@ -1,0 +1,12 @@
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\HotelBooking.Data.dll
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\HotelBooking.Data.pdb
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\obj\Debug\HotelBooking.Data.csprojAssemblyReference.cache
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\obj\Debug\HotelBooking.Data.csproj.CoreCompileInputs.cache
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\obj\Debug\HotelBooking.Data.dll
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\obj\Debug\HotelBooking.Data.pdb
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\HotelBooking.Data.dll.config
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\EntityFramework.dll
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\EntityFramework.xml
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LifeifanDu\source\repos\Assignments\assignment5\HotelBookingMVC\HotelBooking.Data\obj\Debug\HotelBooking.Data.csproj.CopyComplete

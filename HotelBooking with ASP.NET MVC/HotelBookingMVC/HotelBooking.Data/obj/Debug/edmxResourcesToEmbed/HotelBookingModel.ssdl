@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelBookingMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="BookedRoomID" Type="int" Nullable="false" />
+    <Property Name="BookedUserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalPrice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomNumber" Type="int" Nullable="false" />
+    <Property Name="RoomType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BedType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Booking__BookedR__5165187F">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="BookedRoomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddABooking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="BookedRoomId" Type="int" Mode="In" />
+    <Parameter Name="BookedUserId" Type="varchar" Mode="In" />
+    <Parameter Name="TotalPrice" Type="money" Mode="In" />
+  </Function>
+  <Function Name="AddANewRoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomNumber" Type="int" Mode="In" />
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="money" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="DeleteABooking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteARoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllBookings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllCurrentBookings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllFutureBookings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllPastBookings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllRooms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetBookingByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCurrentBookingsOfOneUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetFilteredRoomsByMode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mode" Type="int" Mode="In" />
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetFilteredRoomsByModeAndDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mode" Type="int" Mode="In" />
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetFutureBookingsOfOneUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetGroupedFilteredRoomsByModeAndDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mode" Type="int" Mode="In" />
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetPastBookingsOfOneUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomBy3Types" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByACType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByBedType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByEnabled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetRoomById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByRoomNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomNumber" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByRoomType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByRoomTypeAndACType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomByRoomTypeAndBedType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetRoomsByDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="Price" Type="money" Mode="In" />
+  </Function>
+  <Function Name="UpdateABooking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="BookedRoomId" Type="int" Mode="In" />
+    <Parameter Name="BookedUserId" Type="varchar" Mode="In" />
+    <Parameter Name="TotalPrice" Type="money" Mode="In" />
+  </Function>
+  <Function Name="UpdateARoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="RoomNumber" Type="int" Mode="In" />
+    <Parameter Name="RoomType" Type="varchar" Mode="In" />
+    <Parameter Name="BedType" Type="varchar" Mode="In" />
+    <Parameter Name="ACType" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="money" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+  </Function>
+  <EntityContainer Name="HotelBookingMVCModelStoreContainer">
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Booking__BookedR__5165187F" Association="Self.FK__Booking__BookedR__5165187F">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

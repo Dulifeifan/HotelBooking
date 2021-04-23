@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HotelBooking.Web.Models.FormatedUser>
+<h2>
+    Users
+</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateOneUser")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Admin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.PasswordHash)*@
+            ******
+        </td>
+        <td>
+            @Html.CheckBoxFor(modelItem => item.Admin, new { onclick = "return false" })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditOneUser", new { id=item.Id }) |
+            
+            @Html.ActionLink("Delete", "DeleteOneUser", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

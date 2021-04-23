@@ -1,0 +1,52 @@
+﻿@model IEnumerable<object>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "_TestLayout.cshtml";
+}
+
+<h2>Index</h2>
+LDu@idealconcepts.com
+LDu@idealconcepts.com@(Model.Count())
+@@Output a text
+
+@foreach(var room in Model) {
+    @Html.Partial("_RoomSummary", room)
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        @: use this format to add text
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+@section footer{
+    <div>Hello!</div>
+}

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HotelBooking.Data.GetAllRooms_Result>
+<h2>Rooms</h2>
+<hr />
+<p>
+    @Html.ActionLink("Create New", "CreateOneRoom")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enabled)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BedType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            
+            @Html.CheckBoxFor(modelItem => item.Enabled, new { onclick = "return false" })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditOneRoom", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DeleteOneRoom", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

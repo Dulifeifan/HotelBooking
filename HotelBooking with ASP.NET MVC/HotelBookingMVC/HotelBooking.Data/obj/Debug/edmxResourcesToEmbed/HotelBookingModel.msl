@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HotelBookingMVCModelStoreContainer" CdmEntityContainer="HotelBookingMVCContext">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="HotelBookingMVCModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="HotelBookingMVCModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllRooms" FunctionName="HotelBookingMVCModel.Store.GetAllRooms">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetAllRooms_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByACType" FunctionName="HotelBookingMVCModel.Store.GetRoomByACType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByACType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByBedType" FunctionName="HotelBookingMVCModel.Store.GetRoomByBedType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByBedType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByEnabled" FunctionName="HotelBookingMVCModel.Store.GetRoomByEnabled">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByEnabled_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomById" FunctionName="HotelBookingMVCModel.Store.GetRoomById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomById_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByRoomNumber" FunctionName="HotelBookingMVCModel.Store.GetRoomByRoomNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByRoomNumber_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByRoomType" FunctionName="HotelBookingMVCModel.Store.GetRoomByRoomType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByRoomType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomBy3Types" FunctionName="HotelBookingMVCModel.Store.GetRoomBy3Types">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomBy3Types_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByRoomTypeAndACType" FunctionName="HotelBookingMVCModel.Store.GetRoomByRoomTypeAndACType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByRoomTypeAndACType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomByRoomTypeAndBedType" FunctionName="HotelBookingMVCModel.Store.GetRoomByRoomTypeAndBedType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomByRoomTypeAndBedType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddANewRoom" FunctionName="HotelBookingMVCModel.Store.AddANewRoom" />
+    <FunctionImportMapping FunctionImportName="DeleteARoom" FunctionName="HotelBookingMVCModel.Store.DeleteARoom" />
+    <FunctionImportMapping FunctionImportName="GetFilteredRoomsByMode" FunctionName="HotelBookingMVCModel.Store.GetFilteredRoomsByMode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetFilteredRoomsByMode_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateARoom" FunctionName="HotelBookingMVCModel.Store.UpdateARoom" />
+    <FunctionImportMapping FunctionImportName="GetFilteredRoomsByModeAndDate" FunctionName="HotelBookingMVCModel.Store.GetFilteredRoomsByModeAndDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetFilteredRoomsByModeAndDate_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeleteABooking" FunctionName="HotelBookingMVCModel.Store.DeleteABooking" />
+    <FunctionImportMapping FunctionImportName="GetAllBookings" FunctionName="HotelBookingMVCModel.Store.GetAllBookings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetAllBookings_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllCurrentBookings" FunctionName="HotelBookingMVCModel.Store.GetAllCurrentBookings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetAllCurrentBookings_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllFutureBookings" FunctionName="HotelBookingMVCModel.Store.GetAllFutureBookings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetAllFutureBookings_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllPastBookings" FunctionName="HotelBookingMVCModel.Store.GetAllPastBookings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetAllPastBookings_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCurrentBookingsOfOneUser" FunctionName="HotelBookingMVCModel.Store.GetCurrentBookingsOfOneUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetCurrentBookingsOfOneUser_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetFutureBookingsOfOneUser" FunctionName="HotelBookingMVCModel.Store.GetFutureBookingsOfOneUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetFutureBookingsOfOneUser_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPastBookingsOfOneUser" FunctionName="HotelBookingMVCModel.Store.GetPastBookingsOfOneUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetPastBookingsOfOneUser_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateABooking" FunctionName="HotelBookingMVCModel.Store.UpdateABooking" />
+    <FunctionImportMapping FunctionImportName="AddABooking" FunctionName="HotelBookingMVCModel.Store.AddABooking" />
+    <FunctionImportMapping FunctionImportName="GetGroupedFilteredRoomsByModeAndDate" FunctionName="HotelBookingMVCModel.Store.GetGroupedFilteredRoomsByModeAndDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetGroupedFilteredRoomsByModeAndDate_Result">
+          <ScalarProperty Name="TheNumberOfAvailableRooms" ColumnName="TheNumberOfAvailableRooms" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRoomsByDetails" FunctionName="HotelBookingMVCModel.Store.GetRoomsByDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetRoomsByDetails_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BedType" ColumnName="BedType" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBookingByID" FunctionName="HotelBookingMVCModel.Store.GetBookingByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelBookingMVCModel.GetBookingByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BookedRoomID" ColumnName="BookedRoomID" />
+          <ScalarProperty Name="BookedUserID" ColumnName="BookedUserID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,58 @@
+﻿@model HotelBooking.Data.Room
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for @Model.RoomNumber</h2>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BedType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BedType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

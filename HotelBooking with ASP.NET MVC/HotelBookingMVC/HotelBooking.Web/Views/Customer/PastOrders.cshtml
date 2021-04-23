@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HotelBooking.Data.GetPastBookingsOfOneUser_Result>
+
+@if (Model.Count() == 0) {
+    <h2>
+        No past orders.
+    </h2>
+}
+else {
+    <h2>
+        Past orders
+    </h2>
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookedRoomNumber)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookedRoomNumber)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}
+<p>
+    @Html.ActionLink("Back to Order", "Orders")
+</p>

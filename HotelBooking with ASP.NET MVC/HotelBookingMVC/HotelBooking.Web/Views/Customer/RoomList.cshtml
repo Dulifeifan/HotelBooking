@@ -1,0 +1,85 @@
+﻿@model IEnumerable<HotelBooking.Data.GetGroupedFilteredRoomsByModeAndDate_Result>
+
+@if (Model.Count() == 0) {
+    <h2>
+        No available rooms.
+    </h2>
+}
+else {
+    using (Html.BeginForm("MakeANewOrder", "Customer",FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TheNumberOfAvailableRooms)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoomType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BedType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    Total Price
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TheNumberOfAvailableRooms)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BedType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @((DateTime.Parse(TempData["EndDate"].ToString()) - DateTime.Parse(TempData["StartDate"].ToString())).TotalDays * (float)item.Price)
+
+                    </td>
+                    <td>
+                        
+                        @Html.ActionLink("Order", "MakeANewOrder", "Customer",
+                                         new HotelBooking.Web.Models.FilterRoomModelForBooking {
+                                             roomType = item.RoomType,
+                                             bedType = item.BedType,
+                                             price = item.Price,
+                                             acType = item.ACType,
+                                             StartDate = DateTime.Parse(TempData["StartDate"].ToString()),
+                                             EndDate = DateTime.Parse(TempData["EndDate"].ToString())
+                                         },
+                                         new {  })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    }
+}
+<p>
+    @Html.ActionLink("Back to Search", "Index")
+</p>
+
+
+
+

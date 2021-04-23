@@ -1,0 +1,43 @@
+﻿@model  HotelBooking.Web.Models.RoomStatus
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Hotel Booking MVC</h1>
+    <p class="lead">Welcome to Hotel Booking MVC</p>
+    <p><a href="~/Customer/" class="btn btn-primary btn-lg">Book a room&raquo;</a></p>
+</div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <h3>Room Status</h3>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        </div>
+    </div> 
+    
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style="float:left">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    
+
+}
+
+@if (Model != null) {
+    <h4>
+        Available room: @Model.AvailableRoom
+    </h4>
+    <h4>
+        Booked room: @Model.BookedRoom
+    </h4>
+    <h4>
+        Disabled room: @Model.DisabledRoom
+    </h4>
+}
+
+
